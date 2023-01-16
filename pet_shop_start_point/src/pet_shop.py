@@ -82,6 +82,6 @@ def sell_pet_to_customer(pet_shop, pet, customer):
             remove_customer_cash(customer, pet['price'])
             remove_pet_by_name(pet_shop, pet)
             add_pet_to_customer(customer, pet)
-            pet_shop['admin']['total_cash'] += pet['price']
-            pet_shop['admin']['pets_sold'] += 1
+            add_or_remove_cash(pet_shop, pet['price'])
+            increase_pets_sold(pet_shop, 1)
         
